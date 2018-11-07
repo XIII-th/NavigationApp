@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@id/importFragment">
+
+    <fragment
+            android:id="@+id/importFragment"
+            android:name="com.xiii.navigationapplication.ImportFragment"
+            android:label="fragment_import"
+            tools:layout="@layout/fragment_import">
+        <action
+                android:id="@+id/add"
+                app:destination="@id/editActivity">
+            <argument
+                    android:name="id"
+                    app:argType="integer"
+                    android:defaultValue="0"/>
+        </action>
+        <action
+                android:id="@+id/edit"
+                app:destination="@id/editActivity">
+            <argument
+                    android:name="id"
+                    app:argType="integer"/>
+        </action>
+    </fragment>
+    <fragment
+            android:id="@+id/galleryFragment"
+            android:name="com.xiii.navigationapplication.GalleryFragment"
+            android:label="fragment_gallery"
+            tools:layout="@layout/fragment_gallery"/>
+    <fragment
+            android:id="@+id/slideshowFragment"
+            android:name="com.xiii.navigationapplication.SlideshowFragment"
+            android:label="fragment_slideshow"
+            tools:layout="@layout/fragment_slideshow"/>
+    <activity
+            android:id="@+id/editActivity"
+            android:name="com.xiii.navigationapplication.EditActivity"
+            android:label="activity_edit"
+            tools:layout="@layout/activity_edit"/>
+</navigation>
